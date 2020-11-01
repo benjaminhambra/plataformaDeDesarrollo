@@ -1,0 +1,62 @@
+﻿@page "/ListadoTareas"
+@using Parcial_II.Data
+@inject TareasService TareasService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager navigation
+<h3>Listado de Tareas</h3>
+<button class="btn" @onclick="()=>Editar(0)">Nuevo</button>
+
+@if (tareas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Vencimiento</th>
+                <th>Estimacion</th>
+                <th>IdRecurso</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tarea in tareas)
+            {
+                <tr>
+                    <td>@tarea.Id</td>
+                    <td>@tarea.Titulo</td>
+                    <td>@tarea.Vencimiento</td>
+                    <td>@tarea.Estimacion</td>
+                    <td>@tarea.IdRecurso</td>
+                    <td>@tarea.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Tareas> tareas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        tareas = await TareasService.GetAll();
+    }
+    protected void Editar(int id)
+    {
+        navigation.NavigateTo("tareas/editar/" + id);
+    }
+    async Task Borrar(int id)
+    {
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Desea elimiar la tarea?");
+        if (confirmed)
+        {
+            await TareasService.Remove(id);
+            tareas = await TareasService.GetAll();
+        }
+    }
+}

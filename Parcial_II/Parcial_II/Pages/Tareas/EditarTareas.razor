@@ -1,0 +1,41 @@
+﻿@page "/tareas/editar/{id:int}"
+@using Parcial_II.Data
+@inject TareasService TareasService
+@inject NavigationManager navigation
+
+<EditForm Model="@Modelo" OnValidSubmit="@Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText @bind-Value="Modelo.Titulo" />
+    <InputText @bind-Value="Modelo.Estado" />
+    <InputText @bind-Value="Modelo.Estimacion" />
+    <InputText @bind-Value="Modelo.Vencimiento" />
+
+    <button type="submit">Guardar</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    public Tareas Modelo { get; set; } = new Tareas();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != 0)
+        {
+            Modelo = await TareasService.GetById(Id);
+        }
+        else
+        {
+            Modelo = new Tareas();
+        }
+    }
+
+    private async void Guardar()
+    {
+        await TareasService.Save(Modelo);
+        navigation.NavigateTo("ListadoTareas");
+    }
+}

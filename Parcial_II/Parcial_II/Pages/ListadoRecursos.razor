@@ -1,0 +1,41 @@
+﻿@page "/ListadoRecursos"
+@using Parcial_II.Data
+@inject RecursosService RecursosService
+
+<h3>Listado de Recursos</h3>
+
+@if (recursos == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>IdUsuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recurso in recursos)
+            {
+                <tr>
+                    <td>@recurso.Id</td>
+                    <td>@recurso.Nombre</td>
+                    <td>@recurso.IdUsuario</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Recursos[] recursos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        recursos = RecursosService.GetRecursos();
+    }
+}
