@@ -1,6 +1,7 @@
 ﻿@page "/usuarios/editar/{id:int}"
 @using Parcial_II.Data
 @inject UsuariosService UsuariosService
+
 @inject NavigationManager navigation
 
 <EditForm Model="@Modelo" OnValidSubmit="@Guardar">
@@ -16,9 +17,7 @@
 @code {
     [Parameter]
     public int Id { get; set; }
-
     public Usuarios Modelo { get; set; } = new Usuarios();
-
     protected override async Task OnInitializedAsync()
     {
         if (Id != 0)

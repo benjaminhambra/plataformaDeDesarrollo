@@ -15,7 +15,7 @@ namespace Parcial_II.Data
         }
         public async Task<List<Tareas>> GetAll()
         {
-            return await context.Tareas.ToListAsync();
+            return await context.Tareas.Include(i => i.Recurso).ToListAsync();
         }
         public async Task<Tareas> GetById(int Id)
         {
@@ -40,6 +40,10 @@ namespace Parcial_II.Data
             context.Tareas.Remove(entidad);
             await context.SaveChangesAsync();
             return true;
+        }
+        public async Task<List<Recursos>> GetRecursos()
+        {
+            return await context.Recursos.ToListAsync();
         }
     }
 }

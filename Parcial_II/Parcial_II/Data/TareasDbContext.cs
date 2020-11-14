@@ -51,5 +51,7 @@ namespace Parcial_II.Data
         }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Tareas> Tareas { get; set; }
+        public DbSet<Detalles> Detalles { get; set; }
+        public DbSet<Recursos> Recursos { get; set; }
     }
 }

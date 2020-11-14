@@ -33,6 +33,8 @@ namespace Parcial_II
             services.AddSingleton<UsuariosService>();
             services.AddSingleton<RecursosService>();
             services.AddSingleton<TareasDbContext>();
+            services.AddSingleton<DetallesService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

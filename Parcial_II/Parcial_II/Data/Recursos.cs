@@ -8,9 +8,15 @@ namespace Parcial_II.Data
     public class Recursos
     {
         public Recursos() { }
+        public Recursos(string Nombre, Usuarios Usuario)
+        {
+            this.Nombre = Nombre;
+            this.Usuario = Usuario;
+
+        }
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public int IdUsuario { get; set; }
+        public int UsuarioId { get; set; }
         public Usuarios Usuario { get; set; }
     }
 }
