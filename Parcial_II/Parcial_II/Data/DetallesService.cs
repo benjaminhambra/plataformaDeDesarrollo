@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,9 @@ namespace Parcial_II.Data
         }
         public async Task<List<Detalles>> GetAll()
         {
-            return await context.Detalles.Include(i=>i.Recurso).Include(i=>i.Tarea).ToListAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetDetalles();
+            //return await context.Detalles.Include(i=>i.Recurso).Include(i=>i.Tarea).ToListAsync();
         }
         public async Task<Detalles> GetById(int Id)
         {

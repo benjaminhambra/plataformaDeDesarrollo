@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oYv/2T1lc0NRuZxFbiTfUUbqaKH9fxgFcB4kMrRA4FkQgypWAHMgcE6ZMipqBhq3SdbChjoRFBvdWRy2kgifpA==",
+  "dgSpecHash": "gR7NYB2tTZ+FsOOaDnAJi3Z1C07+GuRmGAVavkbUEh6F64r6bGUAGoq0c01RyR31SWrSyGj8KFw6wpK5LSkKiQ==",
   "success": true,
   "projectFilePath": "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,8 @@
     "C:\\Users\\Benja\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.9\\microsoft.extensions.logging.abstractions.3.1.9.nupkg.sha512",
     "C:\\Users\\Benja\\.nuget\\packages\\microsoft.extensions.options\\3.1.9\\microsoft.extensions.options.3.1.9.nupkg.sha512",
     "C:\\Users\\Benja\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.9\\microsoft.extensions.primitives.3.1.9.nupkg.sha512",
+    "C:\\Users\\Benja\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Benja\\.nuget\\packages\\refit\\5.2.1\\refit.5.2.1.nupkg.sha512",
     "C:\\Users\\Benja\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\Benja\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
     "C:\\Users\\Benja\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",

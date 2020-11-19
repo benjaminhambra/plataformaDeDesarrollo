@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,24 +16,19 @@ namespace Parcial_II.Data
         }
         public async Task<List<Usuarios>> GetAll()
         {
-            return await context.Usuarios.ToListAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetUsuarios();
         }
         public async Task<Usuarios> GetById(int Id)
         {
-            return await context.Usuarios.Where(i => i.Id == Id).SingleAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetUsuariosById(Id);
+            //return await context.Usuarios.Where(i => i.Id == Id).SingleAsync();
         }
         public async Task<Usuarios> Save(Usuarios value)
         {
-            if (value.Id == 0)
-            {
-                await context.Usuarios.AddAsync(value);
-            }
-            else
-            {
-                context.Usuarios.Update(value);
-            }
-            await context.SaveChangesAsync();
-            return value;
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.CreateUsuarios();
         }
         public async Task<bool> Remove(int id)
         {
@@ -41,5 +37,6 @@ namespace Parcial_II.Data
             await context.SaveChangesAsync();
             return true;
         }
+        
     }
 }

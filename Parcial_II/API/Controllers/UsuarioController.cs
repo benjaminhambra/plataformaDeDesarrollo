@@ -23,5 +23,26 @@ namespace API.Controllers
         {
             return await context.Usuarios.ToListAsync();
         }
+
+        [HttpGet("{id}")]
+        public async Task<Model.Entidades.Usuarios> GetById(int Id)
+        {
+            return await context.Usuarios.Where(i => i.Id == Id).SingleAsync();
+        }
+
+        [HttpPost]
+        public async Task<Model.Entidades.Usuarios> Save(Model.Entidades.Usuarios value)
+        {
+            if (value.Id == 0)
+            {
+                await context.Usuarios.AddAsync(value);
+            }
+            else
+            {
+                context.Usuarios.Update(value);
+            }
+            await context.SaveChangesAsync();
+            return value;
+        }
     }
 }
