@@ -30,19 +30,40 @@ namespace API.Controllers
             return await context.Usuarios.Where(i => i.Id == Id).SingleAsync();
         }
 
+        //[HttpPost]
+        //public async Task<Model.Entidades.Usuarios> Save(Model.Entidades.Usuarios value)
+        //{
+        //    if (value.Id == 0)
+        //    {
+        //        await context.Usuarios.AddAsync(value);
+        //    }
+        //    else
+        //    {
+        //        context.Usuarios.Attach(value);
+        //        context.Usuarios.Update(value);
+        //    }
+        //    await context.SaveChangesAsync();
+        //    return value;
+        //}
+
         [HttpPost]
-        public async Task<Model.Entidades.Usuarios> Save(Model.Entidades.Usuarios value)
+        public IActionResult Post(Model.Entidades.Usuarios valor)
         {
-            if (value.Id == 0)
+            var local = context.Usuarios.Local.FirstOrDefault(e => e.Id.Equals(valor.Id));
+
+            if (local != null)
+                context.Entry(local).State = EntityState.Detached;
+
+            if (valor.Id == 0)
             {
-                await context.Usuarios.AddAsync(value);
+                context.Entry(valor).State = EntityState.Added;
             }
             else
             {
-                context.Usuarios.Update(value);
+                context.Entry(valor).State = EntityState.Modified;
             }
-            await context.SaveChangesAsync();
-            return value;
+            context.SaveChanges();
+            return Ok(valor);
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj": {}
+    "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj": {}
   },
   "projects": {
-    "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj": {
+    "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj",
+        "projectUniqueName": "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj",
         "projectName": "Parcial_II",
-        "projectPath": "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj",
+        "projectPath": "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\Parcial_II.csproj",
         "packagesPath": "C:\\Users\\Benja\\.nuget\\packages\\",
-        "outputPath": "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\obj\\",
+        "outputPath": "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Parcial_II\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Benja\\AppData\\Roaming\\NuGet\\NuGet.Config",

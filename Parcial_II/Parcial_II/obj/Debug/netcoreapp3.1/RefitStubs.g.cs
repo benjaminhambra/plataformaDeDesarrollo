@@ -97,35 +97,59 @@ namespace Parcial_II.Data
         }
 
         /// <inheritdoc />
-        Task<List<Tareas>> IRemoteService.CreateTareas()
+        Task<Recursos> IRemoteService.GetRecursosById(int id)
         {
-            var arguments = new object[] {  };
-            var func = requestBuilder.BuildRestResultFuncForMethod("CreateTareas", new Type[] {  });
-            return (Task<List<Tareas>>)func(Client, arguments);
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetRecursosById", new Type[] { typeof(int) });
+            return (Task<Recursos>)func(Client, arguments);
         }
 
         /// <inheritdoc />
-        Task<Usuarios> IRemoteService.CreateUsuarios()
+        Task<Tareas> IRemoteService.GetTareasById(int Id)
         {
-            var arguments = new object[] {  };
-            var func = requestBuilder.BuildRestResultFuncForMethod("CreateUsuarios", new Type[] {  });
+            var arguments = new object[] { Id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetTareasById", new Type[] { typeof(int) });
+            return (Task<Tareas>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Detalles> IRemoteService.GetDetallesById(int Id)
+        {
+            var arguments = new object[] { Id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetDetallesById", new Type[] { typeof(int) });
+            return (Task<Detalles>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Usuarios> IRemoteService.CreateUsuarios(Usuarios usuario)
+        {
+            var arguments = new object[] { usuario };
+            var func = requestBuilder.BuildRestResultFuncForMethod("CreateUsuarios", new Type[] { typeof(Usuarios) });
             return (Task<Usuarios>)func(Client, arguments);
         }
 
         /// <inheritdoc />
-        Task<List<Recursos>> IRemoteService.CreateRecursos()
+        Task<Tareas> IRemoteService.CreateTarea(Tareas tarea)
         {
-            var arguments = new object[] {  };
-            var func = requestBuilder.BuildRestResultFuncForMethod("CreateRecursos", new Type[] {  });
-            return (Task<List<Recursos>>)func(Client, arguments);
+            var arguments = new object[] { tarea };
+            var func = requestBuilder.BuildRestResultFuncForMethod("CreateTarea", new Type[] { typeof(Tareas) });
+            return (Task<Tareas>)func(Client, arguments);
         }
 
         /// <inheritdoc />
-        Task<List<Detalles>> IRemoteService.CreateDetalles()
+        Task<Recursos> IRemoteService.CreateRecurso(Recursos recurso)
         {
-            var arguments = new object[] {  };
-            var func = requestBuilder.BuildRestResultFuncForMethod("CreateDetalles", new Type[] {  });
-            return (Task<List<Detalles>>)func(Client, arguments);
+            var arguments = new object[] { recurso };
+            var func = requestBuilder.BuildRestResultFuncForMethod("CreateRecurso", new Type[] { typeof(Recursos) });
+            return (Task<Recursos>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Detalles> IRemoteService.CreateDetalle(Detalles detalle)
+        {
+            var arguments = new object[] { detalle };
+            var func = requestBuilder.BuildRestResultFuncForMethod("CreateDetalle", new Type[] { typeof(Detalles) });
+            return (Task<Detalles>)func(Client, arguments);
         }
     }
 }

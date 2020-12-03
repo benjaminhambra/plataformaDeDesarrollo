@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Model\\Model.csproj",
+      "projectUniqueName": "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Model\\Model.csproj",
+      "projectPath": "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Model\\Model.csproj",
       "packagesPath": "C:\\Users\\Benja\\.nuget\\packages\\",
-      "outputPath": "E:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Model\\obj\\",
+      "outputPath": "C:\\Users\\Benja\\Source\\Repos\\plataformaDeDesarrollo\\Parcial_II\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Benja\\AppData\\Roaming\\NuGet\\NuGet.Config",

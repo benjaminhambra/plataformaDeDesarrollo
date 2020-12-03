@@ -19,24 +19,16 @@ namespace Parcial_II.Data
         {
             var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
             return await remoteService.GetDetalles();
-            //return await context.Detalles.Include(i=>i.Recurso).Include(i=>i.Tarea).ToListAsync();
         }
         public async Task<Detalles> GetById(int Id)
         {
-            return await context.Detalles.Where(i => i.Id == Id).SingleAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetDetallesById(Id);
         }
         public async Task<Detalles> Save(Detalles value)
         {
-            if (value.Id == 0)
-            {
-                await context.Detalles.AddAsync(value);
-            }
-            else
-            {
-                context.Detalles.Update(value);
-            }
-            await context.SaveChangesAsync();
-            return value;
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.CreateDetalle(value);
         }
         public async Task<bool> Remove(int id)
         {
@@ -48,11 +40,13 @@ namespace Parcial_II.Data
 
         public async Task<List<Recursos>> GetRecursos()
         {
-            return await context.Recursos.ToListAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetRecursos();
         }
         public async Task<List<Tareas>> GetTareas()
         {
-            return await context.Tareas.ToListAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetTareas();
         }
     }
 }

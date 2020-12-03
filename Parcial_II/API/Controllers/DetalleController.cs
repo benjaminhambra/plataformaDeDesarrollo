@@ -23,5 +23,46 @@ namespace API.Controllers
         {
             return await context.Detalles.Include(i => i.Recurso).Include(i => i.Tarea).ToListAsync();
         }
+
+        [HttpGet("{id}")]
+        public async Task<Model.Entidades.Detalles> GetById(int Id)
+        {
+            return await context.Detalles.Where(i => i.Id == Id).SingleAsync();
+        }
+
+        // [HttpPost]
+        // public async Task<Model.Entidades.Detalles> Save(Model.Entidades.Detalles value)
+        // {
+        //     if (value.Id == 0)
+        //     {
+        //         await context.Detalles.AddAsync(value);
+        //     }
+        //     else
+        //     {
+        //         context.Detalles.Update(value);
+        //     }
+        //     await context.SaveChangesAsync();
+        //     return value;
+        // }
+
+        [HttpPost]
+        public IActionResult Post(Model.Entidades.Detalles valor)
+        {
+            var local = context.Detalles.Local.FirstOrDefault(e => e.Id.Equals(valor.Id));
+
+            if (local != null)
+                context.Entry(local).State = EntityState.Detached;
+
+            if (valor.Id == 0)
+            {
+                context.Entry(valor).State = EntityState.Added;
+            }
+            else
+            {
+                context.Entry(valor).State = EntityState.Modified;
+            }
+            context.SaveChanges();
+            return Ok(valor);
+        }
     }
 }

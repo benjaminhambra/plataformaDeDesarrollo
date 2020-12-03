@@ -7,3 +7,12 @@ E:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\ne
 E:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
 E:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.dll
 E:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.pdb
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\bin\Debug\netcoreapp3.1\Model.deps.json
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\bin\Debug\netcoreapp3.1\Model.dll
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\bin\Debug\netcoreapp3.1\Model.pdb
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.dll
+C:\Users\Benja\Source\Repos\plataformaDeDesarrollo\Parcial_II\Model\obj\Debug\netcoreapp3.1\Model.pdb

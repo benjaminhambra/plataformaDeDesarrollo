@@ -21,21 +21,15 @@ namespace Parcial_II.Data
         }
         public async Task<Recursos> GetById(int id)
         {
-            return await context.Recursos.Where(i => i.Id == id).SingleAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetRecursosById(id);
         }
         public async Task<Recursos> Save(Recursos value)
         {
-            if (value.Id == 0)
-            {
-                await context.Recursos.AddAsync(value);
-            }
-            else
-            {
-                context.Recursos.Update(value);
-            }
-            await context.SaveChangesAsync();
-            return value;
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.CreateRecurso(value);
         }
+
         public async Task<bool> Remove(int id)
         {
             var entidad = await context.Recursos.Where(i => i.Id == id).SingleAsync();
@@ -46,7 +40,8 @@ namespace Parcial_II.Data
 
         public async Task<List<Usuarios>> GetUsuarios()
         {
-            return await context.Usuarios.ToListAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetUsuarios();
         }
     }
 }

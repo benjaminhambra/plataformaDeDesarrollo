@@ -21,20 +21,13 @@ namespace Parcial_II.Data
         }
         public async Task<Tareas> GetById(int Id)
         {
-            return await context.Tareas.Where(i => i.Id == Id).SingleAsync();
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetTareasById(Id);
         }
         public async Task<Tareas> Save(Tareas value)
         {
-            if (value.Id == 0)
-            {
-                await context.Tareas.AddAsync(value);
-            }
-            else
-            {
-                context.Tareas.Update(value);
-            }
-            await context.SaveChangesAsync();
-            return value;
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.CreateTarea(value);
         }
         public async Task<bool> Remove(int id)
         {
@@ -45,7 +38,9 @@ namespace Parcial_II.Data
         }
         public async Task<List<Recursos>> GetRecursos()
         {
-            return await context.Recursos.ToListAsync();
+
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.GetRecursos();
         }
     }
 }

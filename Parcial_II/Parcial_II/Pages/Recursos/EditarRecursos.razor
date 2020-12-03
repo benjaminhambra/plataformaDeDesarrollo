@@ -17,10 +17,14 @@
     <div class="form-group row">
         <InputSelect @bind-Value="UsuarioId">
             <option value="0">Elija un Usuario</option>
-            @foreach (var item in usuarios)
+            @if (usuarios != null)
             {
-                <option value="@item.Id">@item.Usuario</option>
+                @foreach (var item in usuarios)
+                {
+                    <option value="@item.Id">@item.Usuario</option>
+                }
             }
+
         </InputSelect>
     </div>
     <button type="submit">Guardar</button>

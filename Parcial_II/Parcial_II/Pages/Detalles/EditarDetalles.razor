@@ -26,16 +26,23 @@
     <div class="form-group row">
         <InputSelect @bind-Value="RecursoId">
             <option value="0">Elija un Recuros</option>
-            @foreach (var item in recursos)
+            @if (recursos != null)
             {
-                <option value="@item.Id">@item.Nombre</option>
+                @foreach (var item in recursos)
+                {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
             }
+
         </InputSelect>
         <InputSelect @bind-Value="TareaId">
             <option value="0">Elija una Tarea</option>
-            @foreach (var item in tareas)
+            @if (tareas != null)
             {
-                <option value="@item.Id">@item.Titulo</option>
+                @foreach (var item in tareas)
+                {
+                    <option value="@item.Id">@item.Titulo</option>
+                }
             }
         </InputSelect>
     </div>

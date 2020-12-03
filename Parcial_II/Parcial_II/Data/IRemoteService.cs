@@ -15,29 +15,40 @@ namespace Parcial_II.Data
         [Get("/usuario")]
         Task<List<Usuarios>> GetUsuarios();
 
+
         [Get("/recurso")]
         Task<List<Recursos>> GetRecursos();
 
         [Get("/detalle")]
         Task<List<Detalles>> GetDetalles();
 
-        /* NEWS */
+        /* GET by ID */
 
         [Get("/usuario/{id}")]
         Task<Usuarios> GetUsuariosById(int Id);
 
-        /* POST */
-        [Post("/tarea")]
-        Task<List<Tareas>> CreateTareas();
+        [Get("/recurso/{id}")]
+        Task<Recursos> GetRecursosById(int id);
 
-        [Post("/usuario")]
-        Task<Usuarios> CreateUsuarios();
+        [Get("/tarea/{id}")]
+        Task<Tareas> GetTareasById(int Id);
+
+        [Get("/detalle/{id}")]
+        Task<Detalles> GetDetallesById(int Id);
+
+/* POST */
+
+[Post("/usuario")]
+        Task<Usuarios> CreateUsuarios(Usuarios usuario);
+
+        [Post("/tarea")]
+        Task<Tareas> CreateTarea(Tareas tarea);
 
         [Post("/recurso")]
-        Task<List<Recursos>> CreateRecursos();
+        Task<Recursos> CreateRecurso(Recursos recurso);
 
         [Post("/detalle")]
-        Task<List<Detalles>> CreateDetalles();
+        Task<Detalles> CreateDetalle(Detalles detalle);
 
     }
 }

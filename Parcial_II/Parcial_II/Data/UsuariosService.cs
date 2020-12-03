@@ -28,7 +28,7 @@ namespace Parcial_II.Data
         public async Task<Usuarios> Save(Usuarios value)
         {
             var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
-            return await remoteService.CreateUsuarios();
+            return await remoteService.CreateUsuarios(value);
         }
         public async Task<bool> Remove(int id)
         {

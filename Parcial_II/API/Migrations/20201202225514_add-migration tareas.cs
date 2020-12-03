@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Parcial_II.Migrations
+namespace API.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class addmigrationtareas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,18 +50,17 @@ namespace Parcial_II.Migrations
                     Vencimiento = table.Column<string>(nullable: true),
                     Estimacion = table.Column<string>(nullable: true),
                     RecursoId = table.Column<int>(nullable: false),
-                    ResponsableId = table.Column<int>(nullable: true),
                     Estado = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tareas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tareas_Recursos_ResponsableId",
-                        column: x => x.ResponsableId,
+                        name: "FK_Tareas_Recursos_RecursoId",
+                        column: x => x.RecursoId,
                         principalTable: "Recursos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -108,9 +107,9 @@ namespace Parcial_II.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tareas_ResponsableId",
+                name: "IX_Tareas_RecursoId",
                 table: "Tareas",
-                column: "ResponsableId");
+                column: "RecursoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
