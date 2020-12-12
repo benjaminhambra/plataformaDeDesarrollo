@@ -64,5 +64,20 @@ namespace API.Controllers
             context.SaveChanges();
             return Ok(valor);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTodoItem(int id)
+        {
+            var detalle = await context.Detalles.FindAsync(id);
+            if (detalle == null)
+            {
+                return NotFound();
+            }
+
+            context.Detalles.Remove(detalle);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

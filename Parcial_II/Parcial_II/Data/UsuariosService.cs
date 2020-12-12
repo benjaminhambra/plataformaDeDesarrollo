@@ -2,6 +2,7 @@
 using Refit;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,13 +31,10 @@ namespace Parcial_II.Data
             var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
             return await remoteService.CreateUsuarios(value);
         }
-        public async Task<bool> Remove(int id)
+        public async Task<Usuarios> Remove(int id)
         {
-            var entidad = await context.Usuarios.Where(i => i.Id == id).SingleAsync();
-            context.Usuarios.Remove(entidad);
-            await context.SaveChangesAsync();
-            return true;
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+                return await remoteService.DeleteUsuario(id);
         }
-        
     }
 }

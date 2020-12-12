@@ -151,6 +151,38 @@ namespace Parcial_II.Data
             var func = requestBuilder.BuildRestResultFuncForMethod("CreateDetalle", new Type[] { typeof(Detalles) });
             return (Task<Detalles>)func(Client, arguments);
         }
+
+        /// <inheritdoc />
+        Task<Usuarios> IRemoteService.DeleteUsuario(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("DeleteUsuario", new Type[] { typeof(int) });
+            return (Task<Usuarios>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Tareas> IRemoteService.DeleteTarea(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("DeleteTarea", new Type[] { typeof(int) });
+            return (Task<Tareas>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Recursos> IRemoteService.DeleteRecurso(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("DeleteRecurso", new Type[] { typeof(int) });
+            return (Task<Recursos>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<Detalles> IRemoteService.DeleteDetalle(int id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("DeleteDetalle", new Type[] { typeof(int) });
+            return (Task<Detalles>)func(Client, arguments);
+        }
     }
 }
 

@@ -63,5 +63,20 @@ namespace API.Controllers
             context.SaveChanges();
             return Ok(valor);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTodoItem(int id)
+        {
+            var tarea = await context.Tareas.FindAsync(id);
+            if (tarea == null)
+            {
+                return NotFound();
+            }
+
+            context.Tareas.Remove(tarea);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

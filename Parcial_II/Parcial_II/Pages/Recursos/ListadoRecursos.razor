@@ -1,5 +1,6 @@
 ﻿@page "/ListadoRecursos"
 @using Parcial_II.Data
+@using System.Collections.Generic;
 
 @inject RecursosService RecursosService
 @inject IJSRuntime JsRuntime
@@ -26,15 +27,15 @@ else
         <tbody>
             @foreach (var recurso in recursos)
             {
-            <tr>
-                <td>@recurso.Id</td>
-                <td>@recurso.Nombre</td>
-                <td>@recurso.Usuario.Usuario</td>
-                <td>
-                    <button class="btn" @onclick="()=>Editar(recurso.Id)">Editar</button>
-                    <button class="btn" @onclick="()=>Borrar(recurso.Id)">Borrar</button>
-                </td>
-            </tr>
+                <tr>
+                    <td>@recurso.Id</td>
+                    <td>@recurso.Nombre</td>
+                    <td>@recurso.Usuario.Usuario</td>
+                    <td>
+                        <button class="btn" @onclick="()=>Editar(recurso.Id)">Editar</button>
+                        <button class="btn" @onclick="()=>Borrar(recurso.Id)">Borrar</button>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

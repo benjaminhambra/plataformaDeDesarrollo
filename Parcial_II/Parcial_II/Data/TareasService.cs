@@ -29,12 +29,10 @@ namespace Parcial_II.Data
             var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
             return await remoteService.CreateTarea(value);
         }
-        public async Task<bool> Remove(int id)
+        public async Task<Tareas> Remove(int id)
         {
-            var entidad = await context.Tareas.Where(i => i.Id == id).SingleAsync();
-            context.Tareas.Remove(entidad);
-            await context.SaveChangesAsync();
-            return true;
+            var remoteService = RestService.For<IRemoteService>("https://localhost:44362/api/");
+            return await remoteService.DeleteTarea(id);
         }
         public async Task<List<Recursos>> GetRecursos()
         {

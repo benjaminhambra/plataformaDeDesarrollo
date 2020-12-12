@@ -36,9 +36,9 @@ namespace Parcial_II.Data
         [Get("/detalle/{id}")]
         Task<Detalles> GetDetallesById(int Id);
 
-/* POST */
+        /* POST */
 
-[Post("/usuario")]
+        [Post("/usuario")]
         Task<Usuarios> CreateUsuarios(Usuarios usuario);
 
         [Post("/tarea")]
@@ -50,5 +50,18 @@ namespace Parcial_II.Data
         [Post("/detalle")]
         Task<Detalles> CreateDetalle(Detalles detalle);
 
+        /* DELETE */
+
+        [Delete("/usuario/{id}")]
+        Task<Usuarios> DeleteUsuario(int id);
+
+        [Delete("/tarea/{id}")]
+        Task<Tareas> DeleteTarea(int id);
+
+        [Delete("/recurso/{id}")]
+        Task<Recursos> DeleteRecurso(int id);
+
+        [Delete("/detalle/{id}")]
+        Task<Detalles> DeleteDetalle(int id);
     }
 }
